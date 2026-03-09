@@ -70,7 +70,7 @@ cd AmurotOpenSource
 The "upstream" remote points to the original repository. This lets you pull in new changes from the original project later.
 
 ```bash
-git remote add upstream https://github.com/amurotopensource/AmurotOpenSource.git
+git remote add upstream https://github.com/BinaryBhaskar/AmurotOpenSource.git
 ```
 
 Verify your remotes are set up correctly:
@@ -84,8 +84,8 @@ You should see:
 ```
 origin    https://github.com/YOUR-USERNAME/AmurotOpenSource.git (fetch)
 origin    https://github.com/YOUR-USERNAME/AmurotOpenSource.git (push)
-upstream  https://github.com/amurotopensource/AmurotOpenSource.git (fetch)
-upstream  https://github.com/amurotopensource/AmurotOpenSource.git (push)
+upstream  https://github.com/BinaryBhaskar/AmurotOpenSource.git (fetch)
+upstream  https://github.com/BinaryBhaskar/AmurotOpenSource.git (push)
 ```
 
 ---
@@ -179,7 +179,7 @@ git push origin your-branch-name
 1. Go to your fork on GitHub: `https://github.com/YOUR-USERNAME/AmurotOpenSource`
 2. You will see a banner saying your branch was recently pushed — click **Compare & pull request**
 3. Fill out the pull request template
-4. Set the base repository to `amurotopensource/AmurotOpenSource` and base branch to `main`
+4. Set the base repository to `BinaryBhaskar/AmurotOpenSource` and base branch to `main`
 5. Write a clear title and description
 6. Click **Create pull request**
 

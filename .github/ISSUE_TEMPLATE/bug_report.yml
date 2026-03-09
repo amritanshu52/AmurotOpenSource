@@ -1,0 +1,74 @@
+---
+name: Bug Report
+description: Report a bug in the website code
+title: "fix: "
+labels: ["bug", "needs-triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to report a bug. Fill in as much detail as you can.
+
+  - type: input
+    id: file
+    attributes:
+      label: File
+      description: Which file contains the bug?
+      placeholder: "e.g. index.html, styles.css, script.js"
+    validations:
+      required: true
+
+  - type: input
+    id: line
+    attributes:
+      label: Line number (approximate)
+      placeholder: "e.g. 42"
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: What is wrong? Describe the bug clearly.
+      placeholder: "The navigation link points to #contibute but the section id is #contribute."
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+      description: What should happen instead?
+      placeholder: "Clicking the link should scroll to the Contribute section."
+    validations:
+      required: true
+
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual behavior
+      description: What actually happens?
+      placeholder: "Nothing happens when the link is clicked."
+    validations:
+      required: true
+
+  - type: dropdown
+    id: difficulty
+    attributes:
+      label: Difficulty
+      options:
+        - Beginner
+        - Intermediate
+        - Advanced
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: Checklist
+      options:
+        - label: I have confirmed this bug exists in the current `main` branch
+          required: true
+        - label: I have searched existing issues to make sure this is not a duplicate
+          required: true
+        - label: I am willing to fix this bug myself

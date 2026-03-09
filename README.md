@@ -2,11 +2,14 @@
 
 > A beginner-friendly open source training repository where you learn by doing.
 
+[![Lint](https://github.com/BinaryBhaskar/AmurotOpenSource/actions/workflows/lint.yml/badge.svg)](https://github.com/BinaryBhaskar/AmurotOpenSource/actions/workflows/lint.yml)
+[![Pages](https://github.com/BinaryBhaskar/AmurotOpenSource/actions/workflows/pages.yml/badge.svg)](https://github.com/BinaryBhaskar/AmurotOpenSource/actions/workflows/pages.yml)
+
 ---
 
 ## What is this project?
 
-**AmurotOpenSource** is a practice environment designed to teach the Amurot Team how to learn and to contribute to real open source projects using Git and GitHub.
+**AmurotOpenSource** is a practice environment designed to teach the Amurot Team how to contribute to real open source projects using Git and GitHub.
 
 Instead of reading theory, you contribute here — fixing bugs, creating your own page, writing documentation, and collaborating with others through issues and pull requests.
 
@@ -54,10 +57,10 @@ Edit `people/YOUR-USERNAME/index.html` with your name, bio, and links.
 **4. Commit and push**
 
 ```bash
-git checkout -b add-my-page
+git checkout -b add-page-YOUR-USERNAME
 git add people/YOUR-USERNAME/
 git commit -m "feat: add contributor page for YOUR-USERNAME"
-git push origin add-my-page
+git push origin add-page-YOUR-USERNAME
 ```
 
 **5. Open a Pull Request**
@@ -65,7 +68,7 @@ git push origin add-my-page
 Go to GitHub and open a pull request from your branch to `main`. Your page will be live at:
 
 ```
-https://amurotopensource.github.io/people/YOUR-USERNAME
+https://binarybhaskar.github.io/AmurotOpenSource/people/YOUR-USERNAME
 ```
 
 ---
@@ -79,7 +82,7 @@ By contributing to this project you will learn:
 - How to write meaningful commit messages
 - How to open and describe a pull request
 - How to read and respond to code review
-- How to fix bugs and understand HTML, CSS, and JavaScript
+- How to fix bugs in HTML, CSS, and JavaScript
 - How to rebase a branch and resolve merge conflicts
 - How to read documentation and follow contribution guidelines
 
@@ -100,17 +103,15 @@ AmurotOpenSource/
 ├── docs/                    # Learning documentation
 │   ├── getting-started.md   # Your first contribution walkthrough
 │   ├── git-basics.md        # Git commands reference
-│   └── contributing.md      # Full contribution guidelines
+│   └── contributing.md      # Contribution guide (mirrors CONTRIBUTING.md)
 │
 ├── templates/               # Reusable HTML templates
 │   └── profile-template.html
 │
-├── bugs/                    # Intentional bugs for practice
-│   └── intentional-bugs.md
-│
-├── .github/                 # GitHub automation
+├── .github/                 # GitHub configuration
 │   ├── ISSUE_TEMPLATE/      # Standardized issue forms
-│   └── PULL_REQUEST_TEMPLATE.md
+│   ├── PULL_REQUEST_TEMPLATE.md
+│   └── workflows/           # GitHub Actions CI/CD
 │
 ├── CONTRIBUTING.md          # How to contribute
 ├── LICENSE                  # MIT License
@@ -125,25 +126,29 @@ Read the full guide in [CONTRIBUTING.md](CONTRIBUTING.md) or the beginner walkth
 
 The short version:
 
-1. Fork → Clone → Branch → Edit → Commit → Push → Pull Request
+```
+Fork → Clone → Branch → Edit → Commit → Push → Pull Request
+```
 
 ---
 
 ## Finding issues to work on
 
-Browse the [Issues tab](../../issues) and look for these labels:
+Browse the [Issues tab](https://github.com/BinaryBhaskar/AmurotOpenSource/issues) and look for these labels:
 
-- `good-first-issue` — perfect for your very first contribution
-- `beginner` — straightforward tasks with clear instructions
-- `bug` — something broken that needs fixing
-- `documentation` — improve or write guides
-- `feature` — add something new
+| Label | Meaning |
+|-------|---------|
+| `good-first-issue` | Perfect for your very first contribution |
+| `beginner` | Straightforward tasks with clear instructions |
+| `bug` | Something broken that needs fixing |
+| `documentation` | Improve or write guides |
+| `feature` | Add something new |
 
 ---
 
 ## Contributors
 
-Contributors who have created their pages will appear on the [homepage](https://amurotopensource.github.io).
+Contributors who create their pages appear on the [live site](https://binarybhaskar.github.io/AmurotOpenSource).
 
 ---
 
@@ -155,4 +160,4 @@ This project is licensed under the MIT License. See [LICENSE](LICENSE) for detai
 
 ## Questions?
 
-Open an issue or start a discussion. No question is too small.
+Open an [issue](https://github.com/BinaryBhaskar/AmurotOpenSource/issues/new/choose) or start a [discussion](https://github.com/BinaryBhaskar/AmurotOpenSource/discussions). No question is too small.

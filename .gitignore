@@ -1,0 +1,25 @@
+# Maintainer-only files
+bugs/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Node
+node_modules/
+npm-debug.log*
+
+# Lint caches
+.stylelintcache
+.eslintcache
+
+# Build output (if added in future)
+dist/
+_site/

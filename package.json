@@ -1,0 +1,18 @@
+{
+  "name": "amurot-opensource",
+  "version": "1.0.0",
+  "description": "Beginner-friendly open source training repository",
+  "private": true,
+  "scripts": {
+    "lint": "npm run lint:html && npm run lint:css && npm run lint:js",
+    "lint:html": "htmlhint \"**/*.html\" --ignore \"node_modules/**\"",
+    "lint:css": "stylelint \"**/*.css\" --ignore-path .gitignore",
+    "lint:js": "eslint \"**/*.js\" --ignore-path .gitignore"
+  },
+  "devDependencies": {
+    "eslint": "^8.57.0",
+    "htmlhint": "^1.1.4",
+    "stylelint": "^16.6.1",
+    "stylelint-config-standard": "^36.0.1"
+  }
+}

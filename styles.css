@@ -9,7 +9,6 @@
   padding: 0;
 }
 
-/* BUG #10: Wrong unit — font-size should be "16px" not "16" */
 html {
   font-size: 16;
   scroll-behavior: smooth;
@@ -65,7 +64,6 @@ code {
   background-color: #1a1a2e;
   position: sticky;
   top: 0;
-  /* BUG #11: z-index is a string — should be a number: z-index: 100 */
   z-index: "100";
 }
 
@@ -92,7 +90,6 @@ code {
   text-decoration: none;
 }
 
-/* BUG #12: Selector typo — ".nav-link" is defined here but HTML uses class "nav-lik" */
 .nav-link {
   color: #6c63ff !important;
 }
@@ -121,7 +118,6 @@ code {
   align-items: center;
   justify-content: center;
   text-align: center;
-  /* BUG #13: Typo in property name — "backgrond-color" should be "background-color" */
   backgrond-color: #f5f4ff;
   padding: 4rem 1.5rem;
 }
@@ -160,7 +156,6 @@ code {
 }
 
 .btn-primary:hover {
-  /* BUG #14: Wrong color value — "#5a52e0" is the correct darker shade, but here it is a broken hex */
   background-color: #5a52e;
   text-decoration: none;
 }
@@ -235,7 +230,6 @@ code {
 
 /* --- How It Works --- */
 .how-it-works {
-  /* BUG #15: Missing semicolon after the padding value */
   padding: 5rem 0
   background-color: #f5f4ff;
 }

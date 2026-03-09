@@ -1,0 +1,91 @@
+name: PR Checks
+
+on:
+  pull_request:
+    branches: [main]
+
+jobs:
+  validate-contributor-page:
+    name: Validate Contributor Page
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Check for new contributor pages
+        run: |
+          CHANGED=$(git diff --name-only origin/main...HEAD)
+          echo "Changed files:"
+          echo "$CHANGED"
+
+          NEW_PAGES=$(echo "$CHANGED" | grep -E '^people/[^/]+/index\.html$' || true)
+
+          if [ -n "$NEW_PAGES" ]; then
+            echo "New contributor pages detected:"
+            echo "$NEW_PAGES"
+
+            for page in $NEW_PAGES; do
+              username=$(echo "$page" | cut -d'/' -f2)
+              if [ "$username" = "template" ]; then
+                echo "Error: Do not submit changes to people/template/. Copy it to people/YOUR-USERNAME/."
+                exit 1
+              fi
+              echo "Contributor page for '$username' looks good."
+            done
+          else
+            echo "No new contributor pages in this PR."
+          fi
+
+      - name: Lint changed HTML files
+        run: |
+          CHANGED_HTML=$(git diff --name-only origin/main...HEAD | grep '\.html$' || true)
+          if [ -n "$CHANGED_HTML" ]; then
+            echo "Linting HTML files: $CHANGED_HTML"
+            npx htmlhint $CHANGED_HTML
+          else
+            echo "No HTML files changed."
+          fi
+
+      - name: Lint changed CSS files
+        run: |
+          CHANGED_CSS=$(git diff --name-only origin/main...HEAD | grep '\.css$' || true)
+          if [ -n "$CHANGED_CSS" ]; then
+            echo "Linting CSS files: $CHANGED_CSS"
+            npx stylelint $CHANGED_CSS
+          else
+            echo "No CSS files changed."
+          fi
+
+      - name: Lint changed JS files
+        run: |
+          CHANGED_JS=$(git diff --name-only origin/main...HEAD | grep '\.js$' || true)
+          if [ -n "$CHANGED_JS" ]; then
+            echo "Linting JS files: $CHANGED_JS"
+            npx eslint $CHANGED_JS
+          else
+            echo "No JS files changed."
+          fi
+
+  check-pr-template:
+    name: Check PR Description
+    runs-on: ubuntu-latest
+    steps:
+      - name: Verify PR body is not empty
+        env:
+          PR_BODY: ${{ github.event.pull_request.body }}
+        run: |
+          if [ -z "$PR_BODY" ]; then
+            echo "Pull request description is empty. Please fill out the PR template."
+            exit 1
+          fi
+          echo "PR description present. Looks good."

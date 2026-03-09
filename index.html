@@ -8,37 +8,29 @@
 </head>
 <body>
 
-  <!-- NAVIGATION -->
   <nav class="navbar">
     <div class="nav-brand">
       <a href="index.html">AmurotOpenSource</a>
     </div>
     <ul class="nav-links">
-      <!-- BUG #1: Broken link — href points to "#contibute" but the section id is "contribute" -->
       <li><a href="#contibute">Contribute</a></li>
       <li><a href="docs/getting-started.md">Docs</a></li>
-      <!-- BUG #2: Wrong CSS class — "nav-lik" should be "nav-link" -->
       <li><a href="people/" class="nav-lik">Contributors</a></li>
     </ul>
-    <!-- BUG #3: button id is "darkModeBtn" but script.js looks for "dark-mode-btn" -->
     <button id="darkModeBtn" class="theme-toggle">Toggle Dark Mode</button>
   </nav>
 
-  <!-- HERO SECTION -->
   <header class="hero">
     <div class="hero-content">
       <h1>Learn Open Source by Doing</h1>
-      <!-- BUG #4: Typo — "Contibutions" should be "Contributions" -->
       <p class="hero-subtitle">Make real Contibutions. Build real skills. Collaborate with real people.</p>
       <div class="hero-actions">
         <a href="docs/getting-started.md" class="btn-primary">Get Started</a>
-        <!-- BUG #5: Wrong CSS class — "btn-secondry" should be "btn-secondary" -->
         <a href="#contributors" class="btn-secondry">Meet Contributors</a>
       </div>
     </div>
   </header>
 
-  <!-- ABOUT SECTION -->
   <section class="about" id="about">
     <div class="container">
       <h2>What is AmurotOpenSource?</h2>
@@ -65,7 +57,6 @@
           <p>Every contributor gets a personal page at <code>/people/your-username</code>.</p>
         </div>
         <div class="feature-card">
-          <!-- BUG #6: Missing alt attribute on img -->
           <img src="assets/collaborate-icon.png" width="48" height="48">
           <h3>Collaborate</h3>
           <p>Review other contributors' pull requests. Leave comments. Help each other learn.</p>
@@ -74,7 +65,6 @@
     </div>
   </section>
 
-  <!-- HOW IT WORKS -->
   <section class="how-it-works" id="how-it-works">
     <div class="container">
       <h2>How It Works</h2>
@@ -105,21 +95,17 @@
           <div class="step-content">
             <h3>Go Further</h3>
             <p>Fix bugs, improve docs, build features. Level up your skills.</p>
-          <!-- BUG #7: Missing closing </div> tag for step-content -->
           </li>
       </ol>
     </div>
   </section>
 
-  <!-- CONTRIBUTORS SECTION -->
-  <!-- BUG #8: Section id is "contibutors" — should be "contributors" -->
   <section class="contributors-section" id="contibutors">
     <div class="container">
       <h2>Contributors</h2>
       <p class="section-subtitle">These people have contributed to AmurotOpenSource. Your name could be here.</p>
 
       <div class="contributors-grid" id="contributors-grid">
-        <!-- Contributor cards are injected by script.js -->
       </div>
 
       <div class="cta-block" id="contribute">
@@ -130,16 +116,12 @@
     </div>
   </section>
 
-  <!-- FOOTER -->
   <footer class="footer">
     <div class="container">
+      <p>AmurotOpenSource — Open Source Training Project</p>
       <p>
-        AmurotOpenSource — Open Source Training Project
-      </p>
-      <p>
-        <!-- BUG #9: Wrong URL — "LICSENSE" should be "LICENSE" -->
         Licensed under <a href="LICSENSE">MIT License</a> &bull;
-        <a href="https://github.com/amurotopensource/AmurotOpenSource">GitHub</a>
+        <a href="https://github.com/BinaryBhaskar/AmurotOpenSource">GitHub</a>
       </p>
     </div>
   </footer>

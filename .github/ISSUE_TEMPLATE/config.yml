@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Ask a question
+    url: https://github.com/BinaryBhaskar/AmurotOpenSource/discussions
+    about: Not sure which issue type to use? Start a discussion instead.
+  - name: Read the getting started guide
+    url: https://github.com/BinaryBhaskar/AmurotOpenSource/blob/main/docs/getting-started.md
+    about: New here? Read this before opening an issue.

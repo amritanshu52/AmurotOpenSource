@@ -1,0 +1,53 @@
+---
+name: Feature Request
+description: Suggest a new feature for the website or project
+title: "feat: "
+labels: ["feature", "needs-triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Have an idea to improve the project? Describe it here.
+
+  - type: textarea
+    id: summary
+    attributes:
+      label: Feature summary
+      description: What do you want to add or change?
+      placeholder: "Add a search bar that filters contributor cards by name."
+    validations:
+      required: true
+
+  - type: textarea
+    id: motivation
+    attributes:
+      label: Why would this be useful?
+      description: How does this help contributors or learners?
+      placeholder: "As the contributor list grows, finding a specific person will become harder."
+    validations:
+      required: true
+
+  - type: textarea
+    id: implementation
+    attributes:
+      label: Suggested implementation (optional)
+      description: If you have an idea of how to build it, describe it here.
+      placeholder: "Add an <input> above the contributors grid. Use JavaScript to filter cards based on input value."
+
+  - type: dropdown
+    id: difficulty
+    attributes:
+      label: Estimated difficulty
+      options:
+        - Beginner
+        - Intermediate
+        - Advanced
+
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: Checklist
+      options:
+        - label: I have searched existing issues to make sure this is not a duplicate
+          required: true
+        - label: I am willing to implement this feature myself

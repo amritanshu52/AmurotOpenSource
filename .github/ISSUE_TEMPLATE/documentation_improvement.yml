@@ -1,0 +1,43 @@
+---
+name: Documentation Improvement
+description: Report missing, outdated, or unclear documentation
+title: "docs: "
+labels: ["documentation"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Good documentation is critical. If something confused you, it probably confuses others too.
+
+  - type: input
+    id: file
+    attributes:
+      label: Which file or section needs improvement?
+      placeholder: "e.g. docs/git-basics.md — rebasing section"
+    validations:
+      required: true
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: What is the problem?
+      description: Is something missing, unclear, wrong, or outdated?
+      placeholder: "The rebasing section does not explain how to handle conflicts during a rebase."
+    validations:
+      required: true
+
+  - type: textarea
+    id: suggestion
+    attributes:
+      label: Suggested improvement
+      description: How should it be changed or what should be added?
+      placeholder: "Add a step-by-step example of resolving a conflict during git rebase."
+
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: Checklist
+      options:
+        - label: I have checked that this issue does not already exist
+          required: true
+        - label: I am willing to write the improvement myself

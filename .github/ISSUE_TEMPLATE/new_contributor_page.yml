@@ -1,0 +1,48 @@
+---
+name: New Contributor Page
+description: I want to create my contributor page
+title: "feat: add contributor page for "
+labels: ["contributor-page", "good-first-issue", "beginner"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Welcome! Filling in this issue lets the maintainer know you are working on your page.
+        Read [docs/getting-started.md](../../docs/getting-started.md) before you begin.
+
+  - type: input
+    id: username
+    attributes:
+      label: Your GitHub username
+      placeholder: "e.g. bhaskar"
+    validations:
+      required: true
+
+  - type: input
+    id: name
+    attributes:
+      label: Your display name
+      placeholder: "e.g. Bhaskar"
+    validations:
+      required: true
+
+  - type: textarea
+    id: about
+    attributes:
+      label: A little about yourself (optional)
+      description: This will appear on your contributor page.
+      placeholder: "Computer science student interested in web development and open source."
+
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: Before you start
+      options:
+        - label: I have read [docs/getting-started.md](../../docs/getting-started.md)
+          required: true
+        - label: I have forked and cloned the repository
+          required: true
+        - label: I understand I should copy `people/template/` to `people/MY-USERNAME/` and not edit the template directly
+          required: true
+        - label: I have NOT already opened a PR for this page
+          required: true
