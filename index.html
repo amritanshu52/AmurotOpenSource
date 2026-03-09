@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AmurotOpenSource — Learn Open Source by Doing</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- NAVIGATION -->
+  <nav class="navbar">
+    <div class="nav-brand">
+      <a href="index.html">AmurotOpenSource</a>
+    </div>
+    <ul class="nav-links">
+      <!-- BUG #1: Broken link — href points to "#contibute" but the section id is "contribute" -->
+      <li><a href="#contibute">Contribute</a></li>
+      <li><a href="docs/getting-started.md">Docs</a></li>
+      <!-- BUG #2: Wrong CSS class — "nav-lik" should be "nav-link" -->
+      <li><a href="people/" class="nav-lik">Contributors</a></li>
+    </ul>
+    <!-- BUG #3: button id is "darkModeBtn" but script.js looks for "dark-mode-btn" -->
+    <button id="darkModeBtn" class="theme-toggle">Toggle Dark Mode</button>
+  </nav>
+
+  <!-- HERO SECTION -->
+  <header class="hero">
+    <div class="hero-content">
+      <h1>Learn Open Source by Doing</h1>
+      <!-- BUG #4: Typo — "Contibutions" should be "Contributions" -->
+      <p class="hero-subtitle">Make real Contibutions. Build real skills. Collaborate with real people.</p>
+      <div class="hero-actions">
+        <a href="docs/getting-started.md" class="btn-primary">Get Started</a>
+        <!-- BUG #5: Wrong CSS class — "btn-secondry" should be "btn-secondary" -->
+        <a href="#contributors" class="btn-secondry">Meet Contributors</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ABOUT SECTION -->
+  <section class="about" id="about">
+    <div class="container">
+      <h2>What is AmurotOpenSource?</h2>
+      <p>
+        AmurotOpenSource is a training repository where you learn how to contribute to open source
+        projects by actually doing it. Fork the repo, create your page, fix bugs, and collaborate
+        with others — all in a safe, beginner-friendly environment.
+      </p>
+
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon">★</div>
+          <h3>Real Workflow</h3>
+          <p>Work with Git branches, pull requests, and code review — just like professional developers.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">⚙</div>
+          <h3>Fix Real Bugs</h3>
+          <p>This website contains intentional bugs. Find them, fix them, and open a pull request.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">◆</div>
+          <h3>Your Own Page</h3>
+          <p>Every contributor gets a personal page at <code>/people/your-username</code>.</p>
+        </div>
+        <div class="feature-card">
+          <!-- BUG #6: Missing alt attribute on img -->
+          <img src="assets/collaborate-icon.png" width="48" height="48">
+          <h3>Collaborate</h3>
+          <p>Review other contributors' pull requests. Leave comments. Help each other learn.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section class="how-it-works" id="how-it-works">
+    <div class="container">
+      <h2>How It Works</h2>
+      <ol class="steps-list">
+        <li class="step">
+          <span class="step-number">1</span>
+          <div class="step-content">
+            <h3>Fork &amp; Clone</h3>
+            <p>Fork this repository and clone it to your computer.</p>
+          </div>
+        </li>
+        <li class="step">
+          <span class="step-number">2</span>
+          <div class="step-content">
+            <h3>Create Your Page</h3>
+            <p>Copy the template, fill in your details, and commit your work.</p>
+          </div>
+        </li>
+        <li class="step">
+          <span class="step-number">3</span>
+          <div class="step-content">
+            <h3>Open a Pull Request</h3>
+            <p>Push your branch and open a PR. A maintainer will review it.</p>
+          </div>
+        </li>
+        <li class="step">
+          <span class="step-number">4</span>
+          <div class="step-content">
+            <h3>Go Further</h3>
+            <p>Fix bugs, improve docs, build features. Level up your skills.</p>
+          <!-- BUG #7: Missing closing </div> tag for step-content -->
+          </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- CONTRIBUTORS SECTION -->
+  <!-- BUG #8: Section id is "contibutors" — should be "contributors" -->
+  <section class="contributors-section" id="contibutors">
+    <div class="container">
+      <h2>Contributors</h2>
+      <p class="section-subtitle">These people have contributed to AmurotOpenSource. Your name could be here.</p>
+
+      <div class="contributors-grid" id="contributors-grid">
+        <!-- Contributor cards are injected by script.js -->
+      </div>
+
+      <div class="cta-block" id="contribute">
+        <h3>Ready to join?</h3>
+        <p>Follow the guide and add your own page to this list.</p>
+        <a href="docs/getting-started.md" class="btn-primary">Read the Guide</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <p>
+        AmurotOpenSource — Open Source Training Project
+      </p>
+      <p>
+        <!-- BUG #9: Wrong URL — "LICSENSE" should be "LICENSE" -->
+        Licensed under <a href="LICSENSE">MIT License</a> &bull;
+        <a href="https://github.com/amurotopensource/AmurotOpenSource">GitHub</a>
+      </p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

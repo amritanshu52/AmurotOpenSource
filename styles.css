@@ -1,0 +1,430 @@
+/* ==============================================
+   AmurotOpenSource — Global Styles
+   ============================================== */
+
+/* --- Reset & Base --- */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* BUG #10: Wrong unit — font-size should be "16px" not "16" */
+html {
+  font-size: 16;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  line-height: 1.6;
+  color: #1a1a2e;
+  background-color: #ffffff;
+}
+
+/* --- Typography --- */
+h1, h2, h3, h4 {
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+h1 { font-size: 2.8rem; }
+h2 { font-size: 2rem; }
+h3 { font-size: 1.4rem; }
+
+a {
+  color: #6c63ff;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+code {
+  background-color: #f0f0f0;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-family: 'Courier New', monospace;
+  font-size: 0.9em;
+}
+
+/* --- Layout --- */
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* --- Navbar --- */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  background-color: #1a1a2e;
+  position: sticky;
+  top: 0;
+  /* BUG #11: z-index is a string — should be a number: z-index: 100 */
+  z-index: "100";
+}
+
+.nav-brand a {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 2rem;
+}
+
+.nav-links a {
+  color: #cccccc;
+  font-size: 0.95rem;
+  transition: color 0.2s;
+}
+
+.nav-links a:hover {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+/* BUG #12: Selector typo — ".nav-link" is defined here but HTML uses class "nav-lik" */
+.nav-link {
+  color: #6c63ff !important;
+}
+
+.theme-toggle {
+  background-color: transparent;
+  border: 1px solid #cccccc;
+  color: #cccccc;
+  padding: 0.4rem 0.9rem;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  transition: all 0.2s;
+}
+
+.theme-toggle:hover {
+  background-color: #6c63ff;
+  border-color: #6c63ff;
+  color: white;
+}
+
+/* --- Hero --- */
+.hero {
+  min-height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  /* BUG #13: Typo in property name — "backgrond-color" should be "background-color" */
+  backgrond-color: #f5f4ff;
+  padding: 4rem 1.5rem;
+}
+
+.hero-content {
+  max-width: 700px;
+}
+
+.hero-content h1 {
+  color: #1a1a2e;
+  margin-bottom: 1.2rem;
+}
+
+.hero-subtitle {
+  font-size: 1.2rem;
+  color: #555555;
+  margin-bottom: 2rem;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* --- Buttons --- */
+.btn-primary {
+  display: inline-block;
+  background-color: #6c63ff;
+  color: white;
+  padding: 0.8rem 1.8rem;
+  border-radius: 6px;
+  font-weight: 600;
+  transition: background-color 0.2s;
+}
+
+.btn-primary:hover {
+  /* BUG #14: Wrong color value — "#5a52e0" is the correct darker shade, but here it is a broken hex */
+  background-color: #5a52e;
+  text-decoration: none;
+}
+
+.btn-secondary {
+  display: inline-block;
+  background-color: transparent;
+  color: #6c63ff;
+  padding: 0.8rem 1.8rem;
+  border-radius: 6px;
+  font-weight: 600;
+  border: 2px solid #6c63ff;
+  transition: all 0.2s;
+}
+
+.btn-secondary:hover {
+  background-color: #6c63ff;
+  color: white;
+  text-decoration: none;
+}
+
+/* --- About Section --- */
+.about {
+  padding: 5rem 0;
+}
+
+.about h2 {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.about > .container > p {
+  text-align: center;
+  max-width: 650px;
+  margin: 0 auto 3rem;
+  color: #555555;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 1.5rem;
+}
+
+.feature-card {
+  background-color: #f9f9ff;
+  border: 1px solid #e8e8f0;
+  border-radius: 10px;
+  padding: 1.8rem;
+  text-align: center;
+  transition: box-shadow 0.2s;
+}
+
+.feature-card:hover {
+  box-shadow: 0 4px 20px rgba(108, 99, 255, 0.1);
+}
+
+.feature-icon {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.feature-card h3 {
+  margin-bottom: 0.5rem;
+  color: #1a1a2e;
+}
+
+.feature-card p {
+  color: #666666;
+  font-size: 0.95rem;
+}
+
+/* --- How It Works --- */
+.how-it-works {
+  /* BUG #15: Missing semicolon after the padding value */
+  padding: 5rem 0
+  background-color: #f5f4ff;
+}
+
+.how-it-works h2 {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.steps-list {
+  list-style: none;
+  max-width: 700px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.step {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.2rem;
+  background-color: white;
+  border-radius: 10px;
+  padding: 1.5rem;
+  border: 1px solid #e8e8f0;
+}
+
+.step-number {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #6c63ff;
+  min-width: 2rem;
+}
+
+.step-content h3 {
+  margin-bottom: 0.3rem;
+}
+
+.step-content p {
+  color: #666666;
+}
+
+/* --- Contributors Section --- */
+.contributors-section {
+  padding: 5rem 0;
+}
+
+.contributors-section h2 {
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+
+.section-subtitle {
+  text-align: center;
+  color: #666666;
+  margin-bottom: 3rem;
+}
+
+.contributors-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1.2rem;
+  margin-bottom: 3rem;
+}
+
+.contributor-card {
+  background-color: #f9f9ff;
+  border: 1px solid #e8e8f0;
+  border-radius: 10px;
+  padding: 1.5rem;
+  text-align: center;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.contributor-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(108, 99, 255, 0.12);
+}
+
+.contributor-avatar {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background-color: #6c63ff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  color: white;
+  font-weight: 700;
+  margin: 0 auto 0.8rem;
+}
+
+.contributor-card h4 {
+  margin-bottom: 0.3rem;
+}
+
+.contributor-card a {
+  font-size: 0.85rem;
+  color: #6c63ff;
+}
+
+/* --- CTA Block --- */
+.cta-block {
+  text-align: center;
+  background-color: #f5f4ff;
+  border-radius: 12px;
+  padding: 3rem;
+}
+
+.cta-block h3 {
+  font-size: 1.6rem;
+  margin-bottom: 0.5rem;
+}
+
+.cta-block p {
+  color: #666666;
+  margin-bottom: 1.5rem;
+}
+
+/* --- Footer --- */
+.footer {
+  background-color: #1a1a2e;
+  color: #aaaaaa;
+  text-align: center;
+  padding: 2rem;
+  font-size: 0.9rem;
+}
+
+.footer a {
+  color: #aaaaaa;
+}
+
+.footer a:hover {
+  color: white;
+}
+
+.footer p + p {
+  margin-top: 0.5rem;
+}
+
+/* --- Dark Mode --- */
+body.dark-mode {
+  background-color: #0d0d1a;
+  color: #e0e0e0;
+}
+
+body.dark-mode .feature-card,
+body.dark-mode .step,
+body.dark-mode .contributor-card {
+  background-color: #1a1a2e;
+  border-color: #2a2a4a;
+}
+
+body.dark-mode .hero {
+  background-color: #111128;
+}
+
+body.dark-mode .how-it-works {
+  background-color: #111128;
+}
+
+body.dark-mode .hero-content h1,
+body.dark-mode .feature-card h3,
+body.dark-mode .step-content h3 {
+  color: #e0e0e0;
+}
+
+body.dark-mode code {
+  background-color: #2a2a4a;
+  color: #e0e0e0;
+}
+
+/* --- Responsive --- */
+@media (max-width: 768px) {
+  h1 { font-size: 2rem; }
+  h2 { font-size: 1.5rem; }
+
+  .navbar {
+    flex-wrap: wrap;
+    gap: 0.8rem;
+  }
+
+  .nav-links {
+    gap: 1rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1rem;
+  }
+}
