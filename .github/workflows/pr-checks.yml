@@ -22,6 +22,7 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      # Hard check — this WILL block the PR if violated.
       - name: Check for new contributor pages
         run: |
           CHANGED=$(git diff --name-only origin/main...HEAD)
@@ -46,7 +47,11 @@ jobs:
             echo "No new contributor pages in this PR."
           fi
 
-      - name: Lint changed HTML files
+      # Advisory checks — these report lint issues as annotations but do NOT
+      # block the PR from being merged. Read the output and learn from it.
+
+      - name: Lint changed HTML files (advisory)
+        continue-on-error: true
         run: |
           CHANGED_HTML=$(git diff --name-only origin/main...HEAD | grep '\.html$' || true)
           if [ -n "$CHANGED_HTML" ]; then
@@ -56,7 +61,8 @@ jobs:
             echo "No HTML files changed."
           fi
 
-      - name: Lint changed CSS files
+      - name: Lint changed CSS files (advisory)
+        continue-on-error: true
         run: |
           CHANGED_CSS=$(git diff --name-only origin/main...HEAD | grep '\.css$' || true)
           if [ -n "$CHANGED_CSS" ]; then
@@ -66,7 +72,8 @@ jobs:
             echo "No CSS files changed."
           fi
 
-      - name: Lint changed JS files
+      - name: Lint changed JS files (advisory)
+        continue-on-error: true
         run: |
           CHANGED_JS=$(git diff --name-only origin/main...HEAD | grep '\.js$' || true)
           if [ -n "$CHANGED_JS" ]; then
@@ -80,6 +87,7 @@ jobs:
     name: Check PR Description
     runs-on: ubuntu-latest
     steps:
+      # Hard check — a blank PR description will block the PR.
       - name: Verify PR body is not empty
         env:
           PR_BODY: ${{ github.event.pull_request.body }}

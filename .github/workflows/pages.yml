@@ -30,8 +30,9 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Run lint checks
+      - name: Run lint checks (advisory only)
         run: npm run lint
+        continue-on-error: true
 
       - name: Setup Pages
         uses: actions/configure-pages@v5

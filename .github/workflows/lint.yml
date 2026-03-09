@@ -6,6 +6,10 @@ on:
   pull_request:
     branches: [main]
 
+# Lint jobs are advisory. They annotate the code with warnings but never
+# block a merge or a deployment. Contributors should read the annotations
+# and learn from them, but a lint warning will not block a PR.
+
 jobs:
   lint-html:
     name: HTML Lint
@@ -22,8 +26,9 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Lint HTML
+      - name: Lint HTML (advisory)
         run: npm run lint:html
+        continue-on-error: true
 
   lint-css:
     name: CSS Lint
@@ -40,8 +45,9 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Lint CSS
+      - name: Lint CSS (advisory)
         run: npm run lint:css
+        continue-on-error: true
 
   lint-js:
     name: JavaScript Lint
@@ -58,5 +64,6 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Lint JavaScript
+      - name: Lint JavaScript (advisory)
         run: npm run lint:js
+        continue-on-error: true

@@ -30,7 +30,7 @@ function initDarkMode() {
   btn.addEventListener('Click', function () {
     document.body.classList.toggle('dark-mode');
     const isDark = document.body.classList.contains('dark-mode');
-    localStorage.setItem('darkMode', isDark);
+    localStorage.setItem('dark-mode', isDark);
   });
 }
 

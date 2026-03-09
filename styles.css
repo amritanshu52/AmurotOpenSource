@@ -113,7 +113,7 @@ code {
 
 /* --- Hero --- */
 .hero {
-  min-height: 90vh;
+  min-height: 9vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -230,7 +230,7 @@ code {
 
 /* --- How It Works --- */
 .how-it-works {
-  padding: 5rem 0
+  padding: 5rem 0;
   background-color: #f5f4ff;
 }
 
