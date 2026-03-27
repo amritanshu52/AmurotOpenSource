@@ -1,0 +1,81 @@
+.contributors-page {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 3rem 1.5rem;
+}
+
+.contributors-page h1 {
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+
+.page-subtitle {
+  text-align: center;
+  color: #666;
+  margin-bottom: 3rem;
+}
+
+.people-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1.2rem;
+  margin-bottom: 3rem;
+}
+
+.person-card {
+  background-color: #f9f9ff;
+  border: 1px solid #e8e8f0;
+  border-radius: 10px;
+  padding: 1.5rem;
+  text-align: center;
+  transition: transform 0.2s, box-shadow 0.2s;
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+.person-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(108, 99, 255, 0.12);
+  text-decoration: none;
+}
+
+.person-avatar {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background-color: #6c63ff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  color: white;
+  font-weight: 700;
+  margin: 0 auto 0.8rem;
+}
+
+.person-card h3 {
+  font-size: 1rem;
+  margin-bottom: 0.2rem;
+}
+
+.person-card .persons-username {
+  font-size: 0.85rem;
+  color: #6c63ff;
+}
+
+.add-yours {
+  text-align: center;
+  background-color: #f5f4ff;
+  border-radius: 12px;
+  padding: 2.5rem;
+}
+
+.add-yours h2 {
+  margin-bottom: 0.5rem;
+}
+
+.add-yours p {
+  color: #666;
+  margin-bottom: 1.5rem;
+}
