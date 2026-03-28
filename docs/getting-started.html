@@ -1,0 +1,151 @@
+
+<!Doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Getting Started — AmurotOpenSource</title>
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+<main class="container" style="padding: 2rem 1.5rem;">
+    <div class="markdown-body">
+      <h1>Getting Started with AmurotOpenSource</h1>
+<p>This guide walks you through your very first contribution step by step. By the end you will have a live contributor page on the website.</p>
+<hr>
+<h2>What you will need</h2>
+<ul>
+<li>A computer with internet access</li>
+<li>A <a href="https://github.com/join">GitHub account</a> (free)</li>
+<li><a href="https://git-scm.com/downloads">Git installed</a> on your computer</li>
+</ul>
+<p>To check if Git is installed, open a terminal and run:</p>
+<pre><code class="language-bash">git --version
+</code></pre>
+<p>If you see a version number, you are ready. If not, download and install Git first.</p>
+<hr>
+<h2>Step 1: Fork the repository</h2>
+<p>Forking creates your own copy of the repository under your GitHub account. You make all your changes there before proposing them back.</p>
+<ol>
+<li>Open <a href="https://github.com/BinaryBhaskar/AmurotOpenSource">https://github.com/BinaryBhaskar/AmurotOpenSource</a></li>
+<li>Click the <strong>Fork</strong> button in the top-right corner</li>
+<li>Leave all settings as default and click <strong>Create fork</strong></li>
+</ol>
+<p>You now have a copy at <code>https://github.com/YOUR-USERNAME/AmurotOpenSource</code></p>
+<hr>
+<h2>Step 2: Clone your fork</h2>
+<p>Cloning downloads the repository to your local machine.</p>
+<p>Open a terminal and run:</p>
+<pre><code class="language-bash">git clone https://github.com/YOUR-USERNAME/AmurotOpenSource.git
+</code></pre>
+<p>Then move into the project folder:</p>
+<pre><code class="language-bash">cd AmurotOpenSource
+</code></pre>
+<hr>
+<h2>Step 3: Set up your upstream remote</h2>
+<p>This connects your local repository back to the original so you can pull in future changes.</p>
+<pre><code class="language-bash">git remote add upstream https://github.com/BinaryBhaskar/AmurotOpenSource.git
+</code></pre>
+<p>Verify it worked:</p>
+<pre><code class="language-bash">git remote -v
+</code></pre>
+<p>You should see both <code>origin</code> (your fork) and <code>upstream</code> (the original).</p>
+<hr>
+<h2>Step 4: Create a branch</h2>
+<p>Never work directly on <code>main</code>. Create a new branch for your contribution.</p>
+<pre><code class="language-bash">git checkout -b add-page-YOUR-USERNAME
+</code></pre>
+<p>Replace <code>YOUR-USERNAME</code> with your actual GitHub username.</p>
+<hr>
+<h2>Step 5: Create your contributor page</h2>
+<p>Copy the template directory:</p>
+<pre><code class="language-bash">cp -r people/template people/YOUR-USERNAME
+</code></pre>
+<p>Open <code>people/YOUR-USERNAME/index.html</code> in your code editor.</p>
+<p>Replace every placeholder with your own content:</p>
+<table>
+<thead>
+<tr>
+<th>Placeholder</th>
+<th>Replace with</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>YOUR NAME</code></td>
+<td>Your real name or display name</td>
+</tr>
+<tr>
+<td><code>@your-username</code></td>
+<td>Your GitHub username with <code>@</code></td>
+</tr>
+<tr>
+<td><code>Your tagline here</code></td>
+<td>A short one-line bio</td>
+</tr>
+<tr>
+<td>The About Me text</td>
+<td>A short paragraph about yourself</td>
+</tr>
+<tr>
+<td>The links</td>
+<td>Your actual GitHub, LinkedIn, etc.</td>
+</tr>
+<tr>
+<td>The projects</td>
+<td>Your real or practice projects</td>
+</tr>
+<tr>
+<td>Creative Corner</td>
+<td>Anything you like</td>
+</tr>
+</tbody></table>
+<p>Save the file.</p>
+<hr>
+<h2>Step 6: Preview your page (optional)</h2>
+<p>Open the file directly in a browser to see how it looks:</p>
+<ul>
+<li>On Mac: <code>open people/YOUR-USERNAME/index.html</code></li>
+<li>On Windows: <code>start people/YOUR-USERNAME/index.html</code></li>
+<li>Or drag the file into your browser window</li>
+</ul>
+<hr>
+<h2>Step 7: Stage and commit your changes</h2>
+<p>Stage your new files:</p>
+<pre><code class="language-bash">git add people/YOUR-USERNAME/
+</code></pre>
+<p>Commit with a descriptive message:</p>
+<pre><code class="language-bash">git commit -m &quot;feat: add contributor page for YOUR-USERNAME&quot;
+</code></pre>
+<hr>
+<h2>Step 8: Push your branch</h2>
+<pre><code class="language-bash">git push origin add-page-YOUR-USERNAME
+</code></pre>
+<hr>
+<h2>Step 9: Open a Pull Request</h2>
+<ol>
+<li>Go to <code>https://github.com/YOUR-USERNAME/AmurotOpenSource</code></li>
+<li>You will see a banner: <strong>&quot;Your branch was recently pushed&quot;</strong> — click <strong>Compare &amp; pull request</strong></li>
+<li>Fill in the PR template that appears</li>
+<li>Write a short description of what you added</li>
+<li>Click <strong>Create pull request</strong></li>
+</ol>
+<p>A maintainer will review your PR and either approve it or leave feedback.</p>
+<hr>
+<h2>Step 10: After your PR is merged</h2>
+<p>Once merged, your page will be live at:</p>
+<pre><code>https://binarybhaskar.github.io/AmurotOpenSource/people/YOUR-USERNAME
+</code></pre>
+<p>It may take a few minutes for GitHub Pages to build and deploy.</p>
+<hr>
+<h2>What&#39;s next?</h2>
+<ul>
+<li>Browse the <a href="https://github.com/BinaryBhaskar/AmurotOpenSource/issues">Issues list</a></li>
+<li>Look for issues labeled <code>bug</code> or <code>good-first-issue</code></li>
+<li>Read <a href="git-basics.md">docs/git-basics.md</a> to learn more Git commands</li>
+<li>Help review other contributors&#39; pull requests</li>
+</ul>
+
+    </div>
+  </main>
+</body>
+</html>

@@ -4,6 +4,7 @@
   "description": "Beginner-friendly open source training repository",
   "private": true,
   "scripts": {
+    "build:docs":"node build-docs.mjs",
     "lint": "npm run lint:html && npm run lint:css && npm run lint:js",
     "lint:html": "htmlhint \"**/*.html\" --ignore \"node_modules/**\"",
     "lint:css": "stylelint \"**/*.css\" --ignore-path .gitignore",
@@ -14,5 +15,8 @@
     "htmlhint": "^1.1.4",
     "stylelint": "^16.6.1",
     "stylelint-config-standard": "^36.0.1"
+  },
+  "dependencies": {
+    "marked": "^17.0.5"
   }
 }
